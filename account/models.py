@@ -19,14 +19,14 @@ class MyAccountManager(BaseUserManager):
             username = username
         )
 
-        user.sert_password(password)
+        user.set_password(password)
         user.save(self._db)
 
         return user
 
     # override create_superusr function 
     def create_superuser(self, email, username, password=None):
-        user = create_user(
+        user = self.create_user(
             email = self.normalize_email(email),
             username = username,
             password = password
@@ -42,8 +42,7 @@ class MyAccountManager(BaseUserManager):
 
 
 
-
-def get_default_profile_image(self):
+def get_default_profile_image():
     return "my-chat-application-images/logo_1080_1080.png"
 
 def get_profile_image_filepath(self):

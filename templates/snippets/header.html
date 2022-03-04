@@ -57,7 +57,7 @@
 							<!--Account-->
 							<div class="dropdown dropleft">
 								<a class="btn btn-sm" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-									<img class="account-image rounded-circle m-auto d-block" src="{% static 'my-chat-application-images/dummy_image.png' %}" alt="chat application logo " width="25" height="25">
+									<img class="account-image rounded-circle m-auto d-block" src="{{ request.user.profile_image.url }}" alt="chat application logo " width="25" height="25">
 								  </a>
 
 								<div class="dropdown-menu" aria-labelledby="id_profile_links">
@@ -89,7 +89,7 @@
 
 		<!-- row 2 -->
 		<form class="search-bar justify-content-start" onsubmit="return executeQuery();">
-			<input type="text" class="form-control" name="q" id="id_q_small" placeholder="Search...">
+			<input type="text" class="form-control" name="q" id="id_q_small" plac>eholder="Search...">
 		</form>
 
 		<!-- row 3 -->
@@ -104,7 +104,7 @@
 								{% comment %} <img class="account-image rounded-circle m-auto d-block dropdown-toggle" id="id_profile_links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="{% static 'my-chat-application-images/dummy_image.png' %}" alt="chat application logo " width="40" height="40"> {% endcomment %}
 
 								<a class="btn btn-sm" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-									<img class="account-image rounded-circle m-auto d-block" src="{% static 'my-chat-application-images/dummy_image.png' %}" alt="chat application logo " width="25" height="25">
+									<img class="account-image rounded-circle m-auto d-block" src="{{ request.user.profile_image.url }}" alt="chat application logo " width="25" height="25">
 								  </a>
 
 								<div class="dropdown-menu" aria-labelledby="id_profile_links">
